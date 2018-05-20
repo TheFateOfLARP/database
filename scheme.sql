@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `calendar`.`Users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `userName` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`))
-ENGINE = MyISAM
+ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `calendar`.`EventTypes` (
   `name` VARCHAR(255) NOT NULL,
   `slug` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`))
-ENGINE = MyISAM;
+ENGINE = InnoDB;
 
 CREATE UNIQUE INDEX `name_UNIQUE` ON `calendar`.`EventTypes` (`name` ASC);
 
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `calendar`.`Teams` (
   `descr` VARCHAR(500) NULL,
   `contacts` JSON NULL,
   PRIMARY KEY (`idTeams`))
-ENGINE = MyISAM
+ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
 
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `calendar`.`Teams_has_Events` (
   `Teams_idTeams` INT NOT NULL,
   `Events_idEvents` INT NOT NULL,
   PRIMARY KEY (`Teams_idTeams`, `Events_idEvents`))
-ENGINE = MyISAM
+ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
 
@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `calendar`.`EventAdmins` (
   `idUsers` INT NOT NULL,
   `idEvents` INT NOT NULL,
   PRIMARY KEY (`idUsers`, `idEvents`))
-ENGINE = MyISAM
+ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
 
